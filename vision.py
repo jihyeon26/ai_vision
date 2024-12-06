@@ -1,37 +1,29 @@
 import requests
 
-FEATURES = ["read", "caption", "denseCaptions", "smartCrops", "objects", "tags", "people"]
-
-def request_vision(feature_list, image_path, subscription_key, endpoint):
+def request_vision(feature_list, image_path, api_key, endpoint, language_code, smartcrops_value=None):
     """
-    Sends an image to the Azure Computer Vision API for analysis.
-
-    Args:
-        feature_list (list): List of features to analyze.
-        image_path (str): Path to the image file.
-        subscription_key (str): Azure subscription key.
-        endpoint (str): API endpoint.
-
-    Returns:
-        dict: Response from the API.
+    Calls the Vision API to analyze an image.
     """
     params = {
         "api-version": "2024-02-01",
-        "language": "en",
-        "features": ",".join(feature_list),
-        "gender-neutral-caption": "false"
+        "language": language_code,
+        "gender-neutral-caption": "false",
+        "features": ",".join(feature_list)
     }
     headers = {
-        "ocp-apim-subscription-key": subscription_key,
+        "ocp-apim-subscription-key": api_key,
         "Content-Type": "application/octet-stream"
     }
 
-    with open(image_path, "rb") as image:
-        image_data = image.read()
+    if smartcrops_value:
+        params.update({"smartcrops-aspect-ratios": smartcrops_value})
+
+    with open(image_path, "rb") as image_file:
+        image_data = image_file.read()
 
     response = requests.post(endpoint, params=params, headers=headers, data=image_data)
 
     if response.status_code == 200:
         return response.json()
     else:
-        return dict(status=response.status_code, message=response.text)
+        return {"status": response.status_code, "message": response.text}
