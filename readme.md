@@ -26,15 +26,16 @@ This project is a Python-based web application that leverages **Azure Cognitive 
 
 ## Project Structure
 
-project_directory/
-├── main.py                 # Gradio UI and event handling
-├── vision.py               # Vision API-related functions
-├── background_removal.py   # Background removal API functions
-├── drawing.py              # Image processing and drawing functions
-├── constants.py            # Shared constants like features and language codes
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Files and folders to exclude from version control
-├── README.md               # Project documentation
+```project_directory/
+    ├── main.py                 # Gradio UI and event handling
+    ├── vision.py               # Vision API-related functions
+    ├── background_removal.py   # Background removal API functions
+    ├── drawing.py              # Image processing and drawing functions
+    ├── constants.py            # Shared constants like features and language codes
+    ├── requirements.txt        # Python dependencies
+    ├── .gitignore              # Files and folders to exclude from version control
+    ├── README.md               # Project documentation
+```
 
 ## Requirements
 - Python 3.8 or higher
