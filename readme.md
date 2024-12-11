@@ -2,15 +2,20 @@
 
 This project is a Python-based web application that leverages **Azure Cognitive Services** to perform image analysis and background removal. Built with **Gradio**, the application provides an intuitive interface for exploring features like object detection, text extraction, and smart cropping.
 
+![UI Screenshot](results/result_img.png)<br>
+
 ## Features
 
 - **Image Analysis**
   - Detect objects, tags, and people in images.
   - Generate captions and dense captions for images.
-  - Perform smart cropping with custom aspect ratios.
+  - Perform smart cropping with custom aspect ratios.<br>
+  ![UI Screenshot](results/result_img2.png)<br>
+  ![UI Screenshot](results/result_read.png)<br>
 
 - **Background Removal**
-  - Remove the background or apply foreground matting to images.
+  - Remove the background or apply foreground matting to images.<br>
+ ![UI Screenshot](results/result_bg.png)<br>
 
 - **Dynamic User Interface**
   - Change language settings dynamically.
@@ -37,7 +42,4 @@ This project is a Python-based web application that leverages **Azure Cognitive 
     ├── README.md               # Project documentation
 ```
 
-## Requirements
-- Python 3.8 or higher
-- Azure Cognitive Services API subscription
 
