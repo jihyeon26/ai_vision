@@ -42,4 +42,33 @@ This project is a Python-based web application that leverages **Azure Cognitive 
     ├── README.md               # Project documentation
 ```
 
+## Installation
 
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/jihyeon26/ai_vision.git
+    cd <your-repository-name>
+    ```
+
+2. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Set up the .env file with your Azure Cognitive Services API credentials:
+    ```plaintext
+    API_KEY=your_api_key_here
+    VISION_ENDPOINT=https://<your-region>.api.cognitive.microsoft.com/computervision/imageanalysis:analyze?
+    SEGMENT_ENDPOINT=https://<your-region>.api.cognitive.microsoft.com/computervision/imageanalysis:segment?
+    ```
+
+## Usage
+1. Run the application:
+    ```bash
+    python main.py
+    ```
+2. Open the Gradio interface in your web browser.
+
+3. Explore the tabs:
+  - Image Analysis: Upload an image, select features, and view the analysis results.
+  - Remove Background: Upload an image and choose a background removal mode.
