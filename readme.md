@@ -47,7 +47,7 @@ This project is a Python-based web application that leverages **Azure Cognitive 
 1. Clone the repository:
     ```bash
     git clone https://github.com/jihyeon26/ai_vision.git
-    cd <your-repository-name>
+    cd ai_vision
     ```
 
 2. Install the required dependencies:
